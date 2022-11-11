@@ -1,4 +1,4 @@
-package com.example.tmdb.data
+package com.example.tmdb.data.models
 
 import com.google.gson.annotations.SerializedName
 

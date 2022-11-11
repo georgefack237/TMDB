@@ -1,5 +1,6 @@
-package com.example.tmdb.data
+package com.example.tmdb.data.models
 
+import com.example.tmdb.data.models.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieResponse(
