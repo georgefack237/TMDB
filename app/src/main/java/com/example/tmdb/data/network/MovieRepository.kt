@@ -1,6 +1,7 @@
 package com.example.tmdb.data.network
 
 import android.util.Log
+import com.example.tmdb.data.models.Movie
 import com.example.tmdb.data.models.MovieResponse
 import com.example.tmdb.utils.apiKey
 import retrofit2.Call
@@ -22,7 +23,9 @@ object MovieRepository {
         movieApi = retrofit.create(MovieApi::class.java)
     }
 
-    fun getTopRatedMovies(page: Int = 1){
+    fun getTopRatedMovies(page: Int = 1,
+    onSuccess: (movies: List<Movie>)-> Unit,
+                          onError:()->Unit){
         movieApi.getTopRated(apiKey, page)
             .enqueue(object : Callback<MovieResponse>{
 
@@ -35,19 +38,26 @@ object MovieRepository {
                         val responseBody = response.body()
 
                         if(responseBody != null){
+                            onSuccess.invoke(responseBody.movies)
                             Log.e("TAG", "${responseBody.movies}")
                         }else{
+                            onError.invoke()
                             Log.e("TAG", "No data found!")
                         }
+                    }else{
+                        Log.e("TAG", "An error occurred at this ${response}")
+                        onError.invoke()
                     }
                 }
 
                 override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
+                    onError.invoke()
                     Log.e("TAG", "An error occurred at $t")
 
                 }
 
             })
+
     }
 
 }

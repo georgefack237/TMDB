@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TMDB</string>
+    <string name="_234">234</string>
+    <string name="the_movie">The Movie</string>
 </resources>

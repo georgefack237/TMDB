@@ -8,7 +8,7 @@ import com.example.tmdb.utils.apiKey
 
 interface MovieApi {
 
-    @GET("/tv/top_rated")
+    @GET("tv/top_rated")
     fun getTopRated(
         @Query("api_key") apiKey: String = "24142a259b6610ee217ed7d0a43d3130",
         @Query("page") page: Int
