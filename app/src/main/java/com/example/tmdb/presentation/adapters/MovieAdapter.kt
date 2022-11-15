@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.tmdb.R
 import com.example.tmdb.data.models.Movie
+import com.example.tmdb.utils.TMDBConstants
 
 class MovieAdapter(private var movies: List<Movie>): RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
@@ -42,7 +43,7 @@ class MovieAdapter(private var movies: List<Movie>): RecyclerView.Adapter<MovieA
         fun bind(movie: Movie){
 
             Glide.with(itemView)
-                .load("https://image.tmdb.org/t/p/w342${movie.posterPath}")
+                .load("${TMDBConstants.IMAGE_URL}${movie.posterPath}")
                 .transform(CenterCrop())
                 .into(image)
 

@@ -29,14 +29,13 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-
     }
 
-    fun fetchMovies(movies: List<Movie>){
+    private fun fetchMovies(movies: List<Movie>){
         adapter.updateMovie(movies)
     }
 
-    fun  onError(){
+    private fun  onError(){
 
     }
 }
