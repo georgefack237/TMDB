@@ -1,16 +1,16 @@
-package com.example.tmdb.data.network
+package com.example.tmdb.data.repository.remote
 
 import com.example.tmdb.data.models.MovieResponse
+import com.example.tmdb.utils.TMDBConstants
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-import com.example.tmdb.utils.apiKey
 
 interface MovieApi {
 
     @GET("tv/top_rated")
     fun getTopRated(
-        @Query("api_key") apiKey: String = "24142a259b6610ee217ed7d0a43d3130",
+        @Query("api_key") apiKey: String = TMDBConstants.apiKey,
         @Query("page") page: Int
     ): Call<MovieResponse>
 }

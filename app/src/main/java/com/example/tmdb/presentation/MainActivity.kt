@@ -1,12 +1,13 @@
-package com.example.tmdb
+package com.example.tmdb.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tmdb.R
 import com.example.tmdb.data.models.Movie
-import com.example.tmdb.data.network.MovieRepository
-import com.example.tmdb.presentation.MovieAdapter
+import com.example.tmdb.data.repository.remote.MovieRepository
+import com.example.tmdb.presentation.adapters.MovieAdapter
 
 class MainActivity : AppCompatActivity() {
 

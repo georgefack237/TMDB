@@ -1,9 +1,9 @@
-package com.example.tmdb.data.network
+package com.example.tmdb.data.repository.remote
 
 import android.util.Log
 import com.example.tmdb.data.models.Movie
 import com.example.tmdb.data.models.MovieResponse
-import com.example.tmdb.utils.apiKey
+import com.example.tmdb.utils.TMDBConstants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,7 +16,7 @@ object MovieRepository {
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://api.themoviedb.org/3/")
+            .baseUrl(TMDBConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -26,7 +26,7 @@ object MovieRepository {
     fun getTopRatedMovies(page: Int = 1,
     onSuccess: (movies: List<Movie>)-> Unit,
                           onError:()->Unit){
-        movieApi.getTopRated(apiKey, page)
+        movieApi.getTopRated(TMDBConstants.apiKey, page)
             .enqueue(object : Callback<MovieResponse>{
 
                 override fun onResponse(
