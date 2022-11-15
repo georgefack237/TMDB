@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmdb.data.models.Movie
 import com.example.tmdb.data.network.MovieRepository
-import com.example.tmdb.ui.MovieAdapter
+import com.example.tmdb.presentation.MovieAdapter
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.tmdb.ui
+package com.example.tmdb.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.tmdb.R
 import com.example.tmdb.data.models.Movie
-import com.example.tmdb.data.network.MovieApi
 
 class MovieAdapter(private var movies: List<Movie>): RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
