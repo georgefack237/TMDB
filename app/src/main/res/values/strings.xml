@@ -2,4 +2,8 @@
     <string name="app_name">TMDB</string>
     <string name="_234">234</string>
     <string name="the_movie">The Movie</string>
+    <string name="the_movie_db">The Movie DB</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="emoji">I am happy &#128522; </string>
+    <string name="view_all">View All</string>
 </resources>
